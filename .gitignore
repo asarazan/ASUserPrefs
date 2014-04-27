@@ -6,3 +6,7 @@
 #
 # Pods/
 
+Pods
+.DS_Store
+.idea
+xcuserdata
