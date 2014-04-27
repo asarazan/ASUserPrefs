@@ -40,16 +40,6 @@ CueSyncDictionary *_mem;
     [[_mem dictionary] writeToFile:[self _path] atomically:YES];
 }
 
-+ (BOOL)boolForKey:(NSString *)key;
-{
-    return [[_mem objectForKey:key] boolValue];
-}
-
-+ (void)setBool:(BOOL)value forKey:(NSString *)key;
-{
-    [_mem setObject:@(value) forKey:key];
-}
-
 + (id)objectForKey:(NSString *)key;
 {
     return [_mem objectForKey:key];
@@ -60,14 +50,35 @@ CueSyncDictionary *_mem;
     [_mem setObject:value forKey:key];
 }
 
++ (BOOL)boolForKey:(NSString *)key;
+{
+    return [[self objectForKey:key] boolValue];
+}
+
++ (void)setBool:(BOOL)value forKey:(NSString *)key;
+{
+    [self setObject:@(value) forKey:key];
+}
+
 + (NSInteger)integerForKey:(NSString *)key;
 {
-    return [[_mem objectForKey:key] integerValue];
+    return [[self objectForKey:key] integerValue];
 }
 
 + (void)setInteger:(NSInteger)value forKey:(NSString *)key;
 {
-    [_mem setObject:@(value) forKey:key];
+    [self setObject:@(value) forKey:key];
 }
+
++ (int64_t)longForKey:(NSString *)key;
+{
+    return [[self objectForKey:key] longLongValue];
+}
+
++ (void)setLong:(int64_t)value forKey:(NSString *)key;
+{
+    [self setObject:[NSNumber numberWithLongLong:value] forKey:key];
+}
+
 
 @end
