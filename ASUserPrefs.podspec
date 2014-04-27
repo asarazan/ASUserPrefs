@@ -6,5 +6,6 @@ Pod::Spec.new do |s|
   s.license      = 'Apache'
   s.authors      = { "Aaron Sarazan" => "aaron@sarazan.net" }
   s.source       = { :git => "https://github.com/asarazan/ASUserPrefs.git" }
+  s.source_files = "ASUserPrefs/**"
   s.platform     = :ios, '5.0'
 end
