@@ -25,7 +25,7 @@ CueSyncDictionary *_mem;
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _mem = [[NSDictionary dictionaryWithContentsOfFile:[self _path]] cueConcurrent];
+        _mem = [[CueSyncDictionary alloc] initWithDictionary:[NSDictionary dictionaryWithContentsOfFile:[self _path]]];
     });
 }
 
