@@ -25,7 +25,7 @@ CueSyncDictionary *_mem;
 
 + (NSString *)_path;
 {
-    return [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, NO).firstObject
+    return [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES).firstObject
             stringByAppendingPathComponent:@"ASUserPrefs"];
 }
 
