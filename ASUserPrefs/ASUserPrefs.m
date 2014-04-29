@@ -29,6 +29,11 @@ CueSyncDictionary *_mem;
     });
 }
 
++ (NSDictionary *)dictionary;
+{
+    return [_mem dictionary];
+}
+
 + (void)destroy;
 {
     _mem = [[CueSyncDictionary alloc] init];

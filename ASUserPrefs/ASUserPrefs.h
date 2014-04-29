@@ -10,6 +10,8 @@
 
 @interface ASUserPrefs : NSObject
 
++ (NSDictionary *)dictionary;
+
 + (void)destroy;
 + (void)synchronize;
 
